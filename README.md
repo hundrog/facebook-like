@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a facebook like social network application build with ruby on rails and materialize
 
-Things you may want to cover:
+* Ruby version: 2.6.4 | Rails 5.2.3
 
-* Ruby version
+Features
 
-* System dependencies
+* Mail confirmation
 
-* Configuration
+* Can login with facebook
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* can like posts

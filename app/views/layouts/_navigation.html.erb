@@ -1,0 +1,34 @@
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><%= link_to 'View'.html_safe, "#!" %></li>
+  <li><%= link_to 'Edit'.html_safe, "#!" %></li>
+  <li class="divider"></li>
+  <li><%= link_to 'Logout'.html_safe, "#!" %></li>
+</ul>
+<ul id="dropdown2" class="dropdown-content">
+  <li><%= link_to 'View'.html_safe, "#!", class:"teal-text" %></li>
+  <li><%= link_to 'Edit'.html_safe, "#!", class:"teal-text" %></li>
+  <li class="divider"></li>
+  <li><%= link_to 'Logout'.html_safe, "#!", class:"teal-text" %></li>
+</ul>
+<nav>
+  <div class="nav-wrapper teal darken-2">
+    <div class="container">
+      <%= link_to '<i class="large material-icons">blur_linear</i> 
+                  MindBook'.html_safe, root_path, class: "brand-logo" %>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><%= link_to 'Friends', "#", class:"grey-text text-lighten-3" %></li>
+        <li><%= link_to 'Friends', "#", class:"grey-text text-lighten-3" %></li>
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Profile<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<ul class="sidenav" id="mobile-demo">
+  <li><%= link_to 'Friends', "#", class:"teal-text" %></li>
+  <li><%= link_to 'Friends', "#", class:"teal-text" %></li>
+  <li class="divider"></li>
+  <li><a class="dropdown-trigger teal-text" href="#!" data-target="dropdown2">Profile<i class="material-icons right">arrow_drop_down</i></a></li>
+</ul>
