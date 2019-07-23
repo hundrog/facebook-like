@@ -20,9 +20,12 @@
       <ul class="right hide-on-med-and-down">
         <li><%= link_to 'Posts', "#", class:"grey-text text-lighten-3" %></li>
         <li><%= link_to 'Friends', "#", class:"grey-text text-lighten-3" %></li>
-        <!-- Dropdown Trigger -->
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Profile<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li><%= link_to 'Logout', destroy_user_session_path, class:"grey-text text-lighten-3", method: :delete %></li>
+        <% if current_user %>
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Profile<i class="material-icons right">arrow_drop_down</i></a></li>
+        <% else %>
+          <li><%= link_to 'Log in', new_user_session_path, class:"grey-text text-lighten-3" %></li>
+        <% end %>
       </ul>
     </div>
   </div>
@@ -30,7 +33,11 @@
 <ul class="sidenav" id="mobile-demo">
   <li><%= link_to 'Posts', "#", class:"teal-text" %></li>
   <li><%= link_to 'Friends', "#", class:"teal-text" %></li>
-  <li class="divider"></li>
-  <!-- Dropdown Trigger -->
-  <li><a class="dropdown-trigger teal-text" href="#!" data-target="dropdown2">Profile<i class="material-icons right">arrow_drop_down</i></a></li>
+  <% if current_user %>
+    <li class="divider"></li>
+    <!-- Dropdown Trigger -->
+    <li><a class="dropdown-trigger teal-text" href="#!" data-target="dropdown2">Profile<i class="material-icons right">arrow_drop_down</i></a></li>
+  <% else %>
+    <li><%= link_to 'Log in', new_user_session_path, class:"teal-text" %></li>
+  <% end %>
 </ul>

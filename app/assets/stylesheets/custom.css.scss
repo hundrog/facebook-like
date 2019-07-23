@@ -1,3 +1,6 @@
+@import "materialize/components/color-variables";
+$primary-color: color("teal", "darken-2") !default;
+$card-link-color: color("deep-orange", "darken-1") !default;
 @import "materialize";
 
 body {
