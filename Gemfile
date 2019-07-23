@@ -14,6 +14,8 @@ gem "jquery-rails"
 # Use materialize for styling
 gem "materialize-sass"
 gem "material_icons"
+gem "will_paginate"
+gem "will_paginate-materialize"
 # Use for Users and styling
 gem "devise"
 gem "devise_materialize"

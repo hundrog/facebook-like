@@ -6,6 +6,10 @@ This is a facebook like social network application build with ruby on rails and 
 
 Features
 
+* Material Design
+
 * Mail confirmation
 
 * Can post
+
+* Can't modify stuff from someon else

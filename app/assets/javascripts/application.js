@@ -20,4 +20,7 @@
 $(document).on('turbolinks:load', function () {
   $('.dropdown-trigger').dropdown();
   $('.sidenav').sidenav();
+  $('textarea#textarea2').characterCounter();
+  M.textareaAutoResize($('#textarea2'));
+  M.updateTextFields();
 });
