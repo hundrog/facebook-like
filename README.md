@@ -8,6 +8,4 @@ Features
 
 * Mail confirmation
 
-* Can login with facebook
-
-* can like posts
+* Can post
