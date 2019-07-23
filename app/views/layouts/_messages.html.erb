@@ -1,8 +1,5 @@
-<% unless flash.empty? %>
-  <script>
-    <% flash.each do |f| %>
-    <% type=f[0].to_s.gsub('alert', 'red').gsub('warning', 'orange').gsub('success', 'green') %>
-    Materialize.toast('<%= f[1] %>', 4000, '<%= type %>')
-    <% end %>
-  </script>
-<% end %>
+<div class="row">
+  <% flash.each do |message_type, message| %>
+    <p><%= "#{message} - #{message_type} " %></p>
+  <% end %>
+</div>

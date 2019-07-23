@@ -18,7 +18,7 @@
                   MindBook'.html_safe, root_path, class: "brand-logo" %>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><%= link_to 'Posts', "#", class:"grey-text text-lighten-3" %></li>
+        <li><%= link_to 'Posts', posts_path, class:"grey-text text-lighten-3" %></li>
         <li><%= link_to 'Friends', "#", class:"grey-text text-lighten-3" %></li>
         <% if current_user %>
           <!-- Dropdown Trigger -->
@@ -31,7 +31,7 @@
   </div>
 </nav>
 <ul class="sidenav" id="mobile-demo">
-  <li><%= link_to 'Posts', "#", class:"teal-text" %></li>
+  <li><%= link_to 'Posts', posts_path, class:"teal-text" %></li>
   <li><%= link_to 'Friends', "#", class:"teal-text" %></li>
   <% if current_user %>
     <li class="divider"></li>
