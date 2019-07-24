@@ -13,3 +13,5 @@ Features
 * Can post
 
 * Can't modify stuff from someon else
+
+* View the User profile and their posts

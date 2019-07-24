@@ -18,8 +18,8 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function () {
-  $('.dropdown-trigger').dropdown();
   $('.sidenav').sidenav();
+  $('.dropdown-trigger').dropdown();
   $('textarea#textarea2').characterCounter();
   M.textareaAutoResize($('#textarea2'));
   M.updateTextFields();

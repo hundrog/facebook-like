@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col s12 m8 offset-m2 l8 offset-l2">
+    <div class="card teal darken-2 center-align">
+      <div class="card-content white-text">
+        <span class="card-title"><%= @user.username %></span>
+        <p></p>
+      </div>
+      <% if current_user != @user %>
+        <div class="card-action">
+          <%= link_to 'Add Friend', '#, class', class:"btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="center-align"><%= will_paginate @user_posts %></div>
+<%= render 'posts/posts', obj: @user_posts %>
+<div class="center-align"><%= will_paginate @user_posts %></div>
