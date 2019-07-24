@@ -17,7 +17,7 @@
         <%= link_to 'Like', '#', class: "" %>
         <%= link_to 'Comment', '#', class: "" %>
         <% if @post.user == current_user %>
-          <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn red darken-4" %>
+          <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn deep-orange accent-4" %>
           <%# link_to 'Edit', edit_post_path(post) %>
         <% end %>
       </div>
@@ -29,10 +29,10 @@
   <div class="col s12 m8 offset-m2 l8 offset-l2">
     <div class="right">
       <% if @post.user == current_user %>
-        <%= link_to 'Edit', edit_post_path(@post), class:"btn blue" %>
+        <%= link_to 'Edit', edit_post_path(@post), class:"btn teal darken-2" %>
         &nbsp;
       <% end %>
-      <%= link_to 'Back', posts_path, class:"btn red" %>
+      <%= link_to 'Back', posts_path, class:"btn deep-orange" %>
     </div>
   </div>
 </div>
