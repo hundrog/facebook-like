@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :confirmable, :recoverable, :rememberable,
          :validatable
   has_many :posts
+  has_many :likes
   validates :username, presence: :true, uniqueness: { case_sensitive: false }
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   attr_writer :login

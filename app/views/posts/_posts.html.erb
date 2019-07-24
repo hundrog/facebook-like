@@ -12,12 +12,15 @@
             <small>Posted by:<%= link_to " #{post.user.username}", user_path(post.user) %> <br>
               <%= time_ago_in_words(post.created_at) %> ago,
               last updated: <%= time_ago_in_words(post.updated_at) %> ago</small>
+            <%= render 'posts/likes_count', obj: post if post.likes.count > 0 %>
           </div>
         </div>
         <div class="card-action center-align">
-          <%= link_to 'Like', '#', class: "" %>
-          <%= link_to 'Comment', '#', class: "" %>
-          <%= link_to 'View', post %>
+          <%= render 'posts/likes_links', obj: post %>
+          <%= link_to '<i class="tiny material-icons">chat</i> 
+                      Comment'.html_safe, '#', class: "" %>
+          <%= link_to '<i class="tiny material-icons">visibility</i> 
+                      View'.html_safe, post %>
           <%# link_to 'Edit', edit_post_path(post) %>
           <%# link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>

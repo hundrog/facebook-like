@@ -1,5 +1,17 @@
 <div class="row">
-  <% flash.each do |message_type, message| %>
-    <p><%= "#{message} - #{message_type} " %></p>
+  <% flash.each do |type, message| %>
+    <% if type == "alert" %>
+      <script type="text/javascript">
+        M.toast({html: '<%= "#{message}" %>', classes: 'deep-orange accent-4'});
+      </script>
+    <% elsif type == "success" %>
+      <script type="text/javascript">
+        M.toast({html: '<%= "#{message}" %>', classes: 'teal accent-3', displayLength: '1500'});
+      </script>
+    <% elsif type == "notice" %>
+      <script type="text/javascript">
+        M.toast({html: '<%= "#{message}" %>', classes: 'blue', displayLength: '1500'});
+      </script>
+    <% end %>
   <% end %>
 </div>

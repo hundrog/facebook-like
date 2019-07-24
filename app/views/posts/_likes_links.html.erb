@@ -1,0 +1,12 @@
+<!-- obj == post | @post -->
+<% if obj.user != current_user %>
+  <!--  -->
+  <% if obj.is_liked_by?(current_user) %>
+    <%= link_to '<i class="tiny material-icons">block</i> 
+                  Unlike'.html_safe, post_like_path(obj), class: "", method: :delete %>
+  <% else %>
+    <%= link_to '<i class="tiny material-icons">favorite</i> 
+                  Like'.html_safe, post_like_path(obj), class: "", method: :post %>
+    &nbsp;
+  <% end %>
+<% end %>

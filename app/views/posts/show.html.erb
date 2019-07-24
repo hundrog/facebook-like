@@ -11,10 +11,11 @@
           <small>Posted by:<%= link_to " #{@post.user.username}", '#' %> <br>
             <%= time_ago_in_words(@post.created_at) %> ago,
             last updated: <%= time_ago_in_words(@post.updated_at) %> ago</small>
+          <%= render 'posts/likes_count', obj: @post if @post.likes.count > 0 %>
         </div>
       </div>
       <div class="card-action center-align">
-        <%= link_to 'Like', '#', class: "" %>
+        <%= render 'posts/likes_links', obj: @post %>
         <%= link_to 'Comment', '#', class: "" %>
         <% if @post.user == current_user %>
           <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn deep-orange accent-4" %>

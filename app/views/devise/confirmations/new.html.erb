@@ -5,12 +5,14 @@
         <span class="card-title center">Resend Confirmation Instructions</span>
         <div class="divider"></div>
         <%= form_for resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post } do |f| %>
+          <!--
           <% if devise_error_messages? || alert %>
             <div class="form-errors red lighten-1">
-              <%= devise_error_messages! %>
-              <%= alert %>
+              <% devise_error_messages! %>
+              <% alert %>
             </div>
-          <% end %>
+          <% end %> 
+          -->
           <div class="form-inputs row">
             <div class="input-field col s12">
               <i class="material-icons prefix">email</i>

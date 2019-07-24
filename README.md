@@ -15,3 +15,7 @@ Features
 * Can't modify stuff from someon else
 
 * View the User profile and their posts
+
+* Can like and unlike
+
+* Flash messages with materialize
