@@ -17,12 +17,8 @@
         </div>
         <div class="card-action center-align">
           <%= render 'posts/likes_links', obj: post %>
-          <%= link_to '<i class="tiny material-icons">chat</i> 
-                      Comment'.html_safe, '#', class: "" %>
           <%= link_to '<i class="tiny material-icons">visibility</i> 
                       View'.html_safe, post %>
-          <%# link_to 'Edit', edit_post_path(post) %>
-          <%# link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
       </div>
     </div>

@@ -1,0 +1,21 @@
+<% obj.each do |comment| %>
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">
+        </span>
+        <p><%= comment.content %></p>
+        <div class="right-align">
+          <small>Posted by:<%= link_to " #{comment.user.username}", user_path(comment.user) %> <br>
+            <%= time_ago_in_words(comment.created_at) %> ago,
+            last updated: <%= time_ago_in_words(comment.updated_at) %> ago</small>
+        </div>
+        <% if current_user == comment.user %>
+          <div class="card-action right-align no-padding-bottom">
+            <%= link_to 'delete', post_comment_path(comment), class:"btn-small deep-orange accent-4", method: :delete %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

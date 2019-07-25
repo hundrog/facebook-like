@@ -17,3 +17,14 @@ main {
 .pagination li.active a {
   color: #fff;
 }
+
+.no-padding-bottom{
+  padding-bottom: 0 !important;
+}
+
+.less-padding{
+  padding-top: 0 !important;
+  padding-bottom: 5px !important;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}

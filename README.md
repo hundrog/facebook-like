@@ -12,10 +12,12 @@ Features
 
 * Can post
 
-* Can't modify stuff from someon else
+* Can't modify stuff from someone else
 
 * View the User profile and their posts
 
 * Can like and unlike
 
 * Flash messages with materialize
+
+* Can make and remove comments

@@ -1,15 +1,19 @@
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><%= link_to 'View', "#!" %></li>
-  <li><%= link_to 'Edit', "#!" %></li>
-  <li class="divider"></li>
-  <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+  <% if current_user %>
+    <li><%= link_to 'View', user_path(current_user) %></li>
+    <li><%= link_to 'Edit', edit_user_registration_path %></li>
+    <li class="divider"></li>
+    <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+  <% end %>
 </ul>
 <ul id="dropdown2" class="dropdown-content">
-  <li><%= link_to 'View', "#!", class:"teal-text" %></li>
-  <li><%= link_to 'Edit', "#!", class:"teal-text" %></li>
-  <li class="divider"></li>
-  <li><%= link_to 'Logout', destroy_user_session_path, class:"teal-text", method: :delete %></li>
+  <% if current_user %>
+    <li><%= link_to 'View', user_path(current_user), class:"teal-text" %></li>
+    <li><%= link_to 'Edit', edit_user_registration_path, class:"teal-text" %></li>
+    <li class="divider"></li>
+    <li><%= link_to 'Logout', destroy_user_session_path, class:"teal-text", method: :delete %></li>
+  <% end %>
 </ul>
 <nav>
   <div class="nav-wrapper teal darken-2">

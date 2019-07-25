@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :likes
+  has_many :comments
   validates :user_id, presence: true
   validates :content, presence: true, length: { minimum: 10, maximum: 140 }
 

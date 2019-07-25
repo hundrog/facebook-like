@@ -1,16 +1,19 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :comment_post]
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 5)
+    @post = Post.new
+    @posts = Post.paginate(page: params[:page], per_page: 5).order(created_at: :desc)
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @comment = Comment.new
+    @comments = Comment.where(post_id: @post.id).order(created_at: :desc).each
   end
 
   # GET /posts/new
@@ -30,7 +33,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: "Post was successfully created." }
+        format.html { redirect_to root_path, notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -60,6 +63,20 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def new_comment
+    @comment = Comment.new
+  end
+
+  def post_comment
+    @comment = @post.likes.build(user: current_user)
+    if @comment.save
+      flash[:success] = "You have commented the post"
+      # redirect_to post_path(@post)
+    else
+      flash[:error] = "There was something wrong"
     end
   end
 
